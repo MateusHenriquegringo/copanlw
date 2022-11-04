@@ -1,0 +1,118 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --card-primary: #121214fb;
+  --borders: rgb(13, 76, 224);
+  --infos: white;
+}
+ul{
+  list-style: none;
+}
+body {
+  background-color: var(--card-primary);
+  background-image: url(./assets/bg.svg);
+  background-position-x:center;
+  background-size:  cover;
+  background-position-y: 65%;
+}
+#app {
+  width: fit-content;
+  margin: 52px auto;
+}
+
+header {
+  margin-top: 20px;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.card {
+  padding: 32px 23px;
+  text-align: center;
+  background: var(--card-primary);
+  border-bottom: 2px solid var(--borders);
+  border-radius: 6px;
+}
+
+.card h2 {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  padding: 8px 16px;
+  border: 1px solid var(--borders);
+  border-radius: 6px;
+  width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 53px;
+  color: var(--borders);
+}
+.card h2 span {
+  color: var(--infos);
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-top: 5px;
+}
+.card ul {
+   display: flex;
+   flex-direction: column;
+   gap: 34px;
+   width: 270px;
+}
+.card ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+}
+.card ul li + li {
+  padding-top: 24x;
+  border-top: 1px solid var(--infos);
+}
+.card ul li strong {
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 125%;
+  color: var(--infos);
+}
+body * {
+  font-family: 'Roboto', sans-serif;
+}
+#cards {
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 52px;
+}
+.card h2:hover,
+.card ul li strong:hover,
+.card ul li img:hover {
+  transform: scale(1.1);
+}
+.card h2,
+.card ul li strong,
+.card ul li img {
+  transition:transform 0.3s;
+}
+.card {
+  animation: appear .2s;
+}
+@keyframes appear {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media(min-width: 10px) {
+  #cards {
+    max-width: 1400px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
